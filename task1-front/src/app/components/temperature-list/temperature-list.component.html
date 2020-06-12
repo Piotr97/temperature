@@ -1,0 +1,22 @@
+<div *ngIf="temperatureList$ | async as temperatureList" >
+  <pre>{{temperatureList | json}}</pre>
+  <mat-table [dataSource]="temperatureList" class="mat-elevation-z8">
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="localization">
+        <mat-header-cell *matHeaderCellDef> Localization </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.localization}} </mat-cell>
+      </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="value">
+      <mat-header-cell *matHeaderCellDef> Value </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,0 +1,12 @@
+<form [formGroup] = "formGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Localization</mat-label>
+    <input formControlName = "localization" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Value</mat-label>
+    <input formControlName = "value" matInput>
+  </mat-form-field>
+  <br/>
+  <button mat-stroked-button color="accent" (click)="save()" [disabled]="!formGroup.valid">Add</button>
+</form>
